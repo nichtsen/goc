@@ -9,8 +9,9 @@
 //	int n = myprint(str);	
 //	getchar();
 //}
-
-int myprint(char *str) {
-	fprintf(stdout, "%s", str);
-	return 0;
+char buf[50];
+char *myprint(char *str) {
+	int n;
+	n=sprintf(buf, "test.c: %s", str);
+	return buf;
 }

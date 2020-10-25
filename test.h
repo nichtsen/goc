@@ -2,7 +2,7 @@
 #define TEST_H
 
 #include <stdio.h>
-
-int myprint(char *);
+#include <stdlib.h>
+char *myprint(char *);
 
 #endif

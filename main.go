@@ -29,10 +29,11 @@ const (
 
 func main() {
 	var str = string("test go c")
-	//fmt.Println(str)
+	fmt.Println("main.go", str)
 	cs := C.CString(str)
-	n := C.myprint(cs)
-	fmt.Println(n)
+	s := C.myprint(cs)
+	gos := C.GoString(s)
+	fmt.Println(gos)
 }
 
 func Run() {
@@ -57,7 +58,6 @@ func (*Myhandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func upload(w http.ResponseWriter, r *http.Request) {
-
 	if r.Method == "GET" {
 		t, _ := template.ParseFiles(Template_Dir + "file.html")
 		t.Execute(w, "上传文件")
@@ -105,3 +105,5 @@ func check(name string) bool {
 	}
 	return true
 }
+
+
