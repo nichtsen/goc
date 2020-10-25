@@ -1,5 +1,7 @@
 package main
-
+/*
+#include "test.h"
+*/
 import "C"
 
 import (
@@ -28,7 +30,9 @@ const (
 func main() {
 	var str = string("test go c")
 	//fmt.Println(str)
-	C.myprint(&str)
+	cs := C.CString(str)
+	n := C.myprint(cs)
+	fmt.Println(n)
 }
 
 func Run() {

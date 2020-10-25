@@ -1,4 +1,4 @@
-# include "test.h"
+#include "test.h"
 #define MAXBYTE 256 
 
 //void main(void) {
@@ -11,6 +11,6 @@
 //}
 
 int myprint(char *str) {
-	printf("%s", str);
+	fprintf(stdout, "%s", str);
 	return 0;
 }
